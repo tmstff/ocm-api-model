@@ -257,4 +257,10 @@ class Cluster {
 	// The AutoNode settings for this cluster.
 	// This is currently only supported for ROSA HCP
 	AutoNode ClusterAutoNode
+
+	// The SSH public key used for secure access to cluster nodes. When set, this key
+	// is distributed to all nodes, enabling SSH access for debugging
+	// and maintenance purposes.
+	// This is currently only supported for ARO HCP
+	NodeSSHPublicKey String
 }
