@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,12 +26,12 @@ resource IdentityProvider {
 	}
 
 	//Update identity provider in the cluster.
-    method Update {
-        in out Body IdentityProvider
-    }
+	method Update {
+		in out Body IdentityProvider
+	}
 
-    // Reference to the resource that manages the collection of _HTPasswd_ IDP users
-    locator HtpasswdUsers {
-        target HTPasswdUsers
-    }
+	// Reference to the resource that manages the collection of _HTPasswd_ IDP users
+	locator HtpasswdUsers {
+		target HTPasswdUsers
+	}
 }

@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,7 +16,7 @@ limitations under the License.
 
 // Manages the collection of external authentication defined for a ROSA HCP cluster.
 resource ExternalAuths {
-    method List {
+	method List {
 		// Index of the requested page, where one corresponds to the first page.
 		in out Page Integer = 1
 
@@ -28,7 +28,7 @@ resource ExternalAuths {
 
 		// Retrieved list of external authentications.
 		out Items []ExternalAuth
-    }
+	}
 
 	// Adds a new authentication to the cluster.
 	method Add {

@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,15 +16,15 @@ limitations under the License.
 
 // Representation of Metrics Federation
 struct MetricsFederation {
-    // Indicates the name of the service port fronting the prometheus server.
-    PortName String
+	// Indicates the name of the service port fronting the prometheus server.
+	PortName String
 
-    // Namespace where the prometheus server is running.
-    Namespace String
+	// Namespace where the prometheus server is running.
+	Namespace String
 
-    // List of series names to federate from the prometheus server.
-    MatchNames []String
+	// List of series names to federate from the prometheus server.
+	MatchNames []String
 
-    // List of labels used to discover the prometheus server(s) to be federated.
-    MatchLabels [String]String
+	// List of labels used to discover the prometheus server(s) to be federated.
+	MatchLabels [String]String
 }

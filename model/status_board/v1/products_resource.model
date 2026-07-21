@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,22 +16,22 @@ limitations under the License.
 
 // Manages the collection of products.
 resource Products {
-  // Retrieves the list of products.
-  method List {
-    in out Page Integer = 1
-    in out Size Integer = 100
-    in OrderBy String
-    in Search String
-    out Total Integer
-    out Items []Product
-  }
+	// Retrieves the list of products.
+	method List {
+	in out Page Integer = 1
+	in out Size Integer = 100
+	in OrderBy String
+	in Search String
+	out Total Integer
+	out Items []Product
+	}
 
-  method Add {
-    in out Body Product
-  }
+	method Add {
+	in out Body Product
+	}
 
-  locator Product {
-    target Product
-    variable ID
-  }
+	locator Product {
+	target Product
+	variable ID
+	}
 }

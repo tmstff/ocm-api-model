@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,21 +16,21 @@ limitations under the License.
 
 // Definition of a Status Board peer dependency.
 class PeerDependency {
-  // Object creation timestamp.
-  CreatedAt Date
+	// Object creation timestamp.
+	CreatedAt Date
 
-  // Object modification timestamp.
-  UpdatedAt Date
+	// Object modification timestamp.
+	UpdatedAt Date
 
-  // The name of the peer dependency.
-  Name String
+	// The name of the peer dependency.
+	Name String
 
-  // Miscellaneous metadata about the peer dependency.
-  Metadata Interface
+	// Miscellaneous metadata about the peer dependency.
+	Metadata Interface
 
-  // Services associated with the peer dependency.
-  Services []Service
+	// Services associated with the peer dependency.
+	Services []Service
 
-  // The peer dependency owners (name and email)
-  Owners []Owner
+	// The peer dependency owners (name and email)
+	Owners []Owner
 }

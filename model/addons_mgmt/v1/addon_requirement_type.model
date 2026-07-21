@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,18 +16,18 @@ limitations under the License.
 
 // Representation of an addon requirement.
 struct AddonRequirement {
-    // ID of the addon requirement.
-    ID String
+	// ID of the addon requirement.
+	ID String
 
-    // Type of resource of the addon requirement.
-    Resource AddonRequirementResource
+	// Type of resource of the addon requirement.
+	Resource AddonRequirementResource
 
-    // Data for the addon requirement.
-    Data [String]Interface
+	// Data for the addon requirement.
+	Data [String]Interface
 
-    // Indicates if this requirement is enabled for the addon.
-    Enabled Boolean
+	// Indicates if this requirement is enabled for the addon.
+	Enabled Boolean
 
-    // Optional cluster specific status for the addon.
-    Status AddonRequirementStatus
+	// Optional cluster specific status for the addon.
+	Status AddonRequirementStatus
 }

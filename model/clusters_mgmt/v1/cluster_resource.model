@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -64,10 +64,10 @@ resource Cluster {
 		target IdentityProviders
 	}
 
-    // Reference to the resource that manages the external authentication configuration.
-    locator ExternalAuthConfig {
-        target ExternalAuthConfig
-    }
+	// Reference to the resource that manages the external authentication configuration.
+	locator ExternalAuthConfig {
+		target ExternalAuthConfig
+	}
 
 	// Reference to the resource that manages the external configuration.
 	locator ExternalConfiguration {
@@ -75,9 +75,9 @@ resource Cluster {
 	}
 
 	// Reference to the resource that manages the break glass credentials.
-    locator BreakGlassCredentials {
-        target BreakGlassCredentials
-    }
+	locator BreakGlassCredentials {
+		target BreakGlassCredentials
+	}
 
 	// Reference to the resource that manages the cluster's provision shard.
 	locator ProvisionShard {
@@ -94,26 +94,26 @@ resource Cluster {
 		target InflightChecks
 	}
 
-    // Reference to the resource that manages the collection of machine pool resources.
+	// Reference to the resource that manages the collection of machine pool resources.
 	locator MachinePools {
 		target MachinePools
 	}
 
-    // Reference to the resource that manages the collection of node pool resources.
-    locator NodePools {
-        target NodePools
-    }
+	// Reference to the resource that manages the collection of node pool resources.
+	locator NodePools {
+		target NodePools
+	}
 
 	// Initiates cluster hibernation. While hibernating a cluster will not consume any cloud provider infrastructure
 	// but will be counted for quota.
-    method Hibernate {
+	method Hibernate {
 
-    }
+	}
 
-    // Resumes from Hibernation.
-    method Resume {
+	// Resumes from Hibernation.
+	method Resume {
 
-    }
+	}
 
 	// Reference to the resource that manages metrics queries for the cluster.
 	locator MetricQueries {
@@ -127,7 +127,7 @@ resource Cluster {
 
 	// Reference to the resource that manages the collection of the add-on inquiries on this cluster.
 	locator AddonInquiries {
-	    target AddonInquiries
+		target AddonInquiries
 	}
 
 	// Reference to the resource that manages the collection of AWS infrastructure
@@ -148,7 +148,7 @@ resource Cluster {
 
 	// Reference to the resource that manages the collection of addon upgrade policies defined for this cluster.
 	locator AddonUpgradePolicies {
-	    target AddonUpgradePolicies
+		target AddonUpgradePolicies
 	}
 
 	// Reference to the resource that manages the cluster deployment.
@@ -158,17 +158,17 @@ resource Cluster {
 
 	// Reference to cluster resources.
 	locator Resources {
-	    target Resources
+		target Resources
 	}
 
 	// Reference to cluster limited support reasons.
 	locator LimitedSupportReasons {
-	    target LimitedSupportReasons
+		target LimitedSupportReasons
 	}
 
 	// Reference to cluster's agreed version gate.
 	locator GateAgreements {
-	    target VersionGateAgreements
+		target VersionGateAgreements
 	}
 
 	locator STSOperatorRoles {
@@ -189,7 +189,7 @@ resource Cluster {
 	}
 
 	locator KubeletConfigs {
-	    target KubeletConfigs
+		target KubeletConfigs
 	}
 
 	locator DeleteProtection {
@@ -211,11 +211,11 @@ resource Cluster {
 	}
 
 	locator KubeletConfig {
-	    target KubeletConfig
+		target KubeletConfig
 	}
 
 	locator Migrations {
-	    target ClusterMigrations
+		target ClusterMigrations
 	}
 
 	// Reference to the resource that manages image mirror configurations for the cluster.

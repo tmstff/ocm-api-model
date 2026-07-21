@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -179,9 +179,9 @@ class Cluster {
 	// List of machine pools on this cluster.
 	link MachinePools []MachinePool
 
-    // List of node pools on this cluster.
-    // NodePool is a scalable set of worker nodes attached to a hosted cluster.
-    link NodePools []NodePool
+	// List of node pools on this cluster.
+	// NodePool is a scalable set of worker nodes attached to a hosted cluster.
+	link NodePools []NodePool
 
 	// List of ingresses on this cluster.
 	link Ingresses []Ingress
@@ -234,8 +234,8 @@ class Cluster {
 	// This field is deprecated for ROSA Hosted Control Plane clusters and will be removed
 	DisableUserWorkloadMonitoring Boolean
 
-    // Contains information about Managed Service
-    ManagedService ManagedService
+	// Contains information about Managed Service
+	ManagedService ManagedService
 
 	// Hypershift configuration.
 	Hypershift Hypershift

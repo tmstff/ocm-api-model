@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,15 +16,15 @@ limitations under the License.
 
 // Representation of an addon catalog source object used by addon versions.
 struct AdditionalCatalogSource {
-    // ID of the additional catalog source
-    ID String
+	// ID of the additional catalog source
+	ID String
 
-    // Name of the additional catalog source.
-    Name String
+	// Name of the additional catalog source.
+	Name String
 
-    // Image of the additional catalog source.
-    Image String
+	// Image of the additional catalog source.
+	Image String
 
-    // Indicates is this additional catalog source is enabled for the addon
-    Enabled Boolean
+	// Indicates is this additional catalog source is enabled for the addon
+	Enabled Boolean
 }

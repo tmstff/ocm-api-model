@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -16,23 +16,23 @@ limitations under the License.
 
 // Definition of a Web RCA event.
 class Event {
-  // Object creation timestamp.
-  CreatedAt Date
+	// Object creation timestamp.
+	CreatedAt Date
 
-  // Object modification timestamp.
-  UpdatedAt Date
+	// Object modification timestamp.
+	UpdatedAt Date
 
-  // Object deletion timestamp.
-  DeletedAt Date
+	// Object deletion timestamp.
+	DeletedAt Date
 
-  Incident Incident
-  Note String
-  EventType String
-  FollowUp FollowUp
-  ExternalReferenceUrl String
-  Creator User
-  Handoff Handoff
-  StatusChange StatusChange
-  FollowUpChange FollowUpChange
-  Escalation Escalation
+	Incident Incident
+	Note String
+	EventType String
+	FollowUp FollowUp
+	ExternalReferenceUrl String
+	Creator User
+	Handoff Handoff
+	StatusChange StatusChange
+	FollowUpChange FollowUpChange
+	Escalation Escalation
 }

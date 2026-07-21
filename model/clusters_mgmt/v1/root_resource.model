@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -84,12 +84,12 @@ resource Root {
 
 	// Reference to limited support reason templates.
 	locator LimitedSupportReasonTemplates {
-	    target LimitedSupportReasonTemplates
+		target LimitedSupportReasonTemplates
 	}
 
 	// Reference to version gates.
 	locator VersionGates {
-	    target VersionGates
+		target VersionGates
 	}
 
 	// Reference to the resource that manages the environment.
@@ -108,13 +108,13 @@ resource Root {
 	}
 
 	// Reference to the resource that manages the collection of deleted clusters.
-    locator DeletedClusters {
-        target DeletedClusters
-    }
+	locator DeletedClusters {
+		target DeletedClusters
+	}
 
 	//Reference to the resource that manages dns domains.
 	locator DNSDomains {
-	    target DNSDomains
+		target DNSDomains
 	}
 
 	// Reference to the resource that manages network verifications.

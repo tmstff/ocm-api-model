@@ -5,7 +5,7 @@ Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-  http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
@@ -143,16 +143,16 @@ struct Azure {
 	// Mutable.
 	ContainerRegistry AzureContainerRegistry
 
-    // Vnet Integration Subnet Resource ID is the Azure Resource ID of a pre-existing Azure
-    // Subnet used for SWIFT networking (Azure Container Networking Interface).
-    // This subnet is delegated to Microsoft.RedHatOpenShift/hcpOpenShiftClusters
-    // via a Service Association Link and is used for pod networking in the cluster.
-    // Vnet Integration Subnet Resource ID must be located in the same Azure location as the
-    // cluster's region and in the same VNet as Subnet Resource ID.
-    // The Azure Subscription specified as part of the Vnet Integration Subnet Resource ID must
-    // be located in the same Azure Subscription as Subscription ID.
-    // This field is optional - if not specified, SWIFT networking will not be enabled.
-    // Immutable.
-    VnetIntegrationSubnetResourceID string
+	// Vnet Integration Subnet Resource ID is the Azure Resource ID of a pre-existing Azure
+	// Subnet used for SWIFT networking (Azure Container Networking Interface).
+	// This subnet is delegated to Microsoft.RedHatOpenShift/hcpOpenShiftClusters
+	// via a Service Association Link and is used for pod networking in the cluster.
+	// Vnet Integration Subnet Resource ID must be located in the same Azure location as the
+	// cluster's region and in the same VNet as Subnet Resource ID.
+	// The Azure Subscription specified as part of the Vnet Integration Subnet Resource ID must
+	// be located in the same Azure Subscription as Subscription ID.
+	// This field is optional - if not specified, SWIFT networking will not be enabled.
+	// Immutable.
+	VnetIntegrationSubnetResourceID string
 
 }
