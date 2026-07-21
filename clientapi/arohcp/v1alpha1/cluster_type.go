@@ -120,6 +120,7 @@ type Cluster struct {
 	managedService                    *ManagedService
 	name                              string
 	network                           *Network
+	nodeSSHPublicKey                  string
 	nodeDrainGracePeriod              *Value
 	nodePools                         *NodePoolList
 	nodes                             *ClusterNodes
@@ -1286,12 +1287,41 @@ func (o *Cluster) GetNetwork() (value *Network, ok bool) {
 	return
 }
 
+// NodeSSHPublicKey returns the value of the 'node_SSH_public_key' attribute, or
+// the zero value of the type if the attribute doesn't have a value.
+//
+// The SSH public key used for secure access to cluster nodes. When set, this key
+// is distributed to all nodes, enabling SSH access for debugging
+// and maintenance purposes.
+// This is currently only supported for ARO HCP
+func (o *Cluster) NodeSSHPublicKey() string {
+	if o != nil && len(o.fieldSet_) > 48 && o.fieldSet_[48] {
+		return o.nodeSSHPublicKey
+	}
+	return ""
+}
+
+// GetNodeSSHPublicKey returns the value of the 'node_SSH_public_key' attribute and
+// a flag indicating if the attribute has a value.
+//
+// The SSH public key used for secure access to cluster nodes. When set, this key
+// is distributed to all nodes, enabling SSH access for debugging
+// and maintenance purposes.
+// This is currently only supported for ARO HCP
+func (o *Cluster) GetNodeSSHPublicKey() (value string, ok bool) {
+	ok = o != nil && len(o.fieldSet_) > 48 && o.fieldSet_[48]
+	if ok {
+		value = o.nodeSSHPublicKey
+	}
+	return
+}
+
 // NodeDrainGracePeriod returns the value of the 'node_drain_grace_period' attribute, or
 // the zero value of the type if the attribute doesn't have a value.
 //
 // Node drain grace period.
 func (o *Cluster) NodeDrainGracePeriod() *Value {
-	if o != nil && len(o.fieldSet_) > 48 && o.fieldSet_[48] {
+	if o != nil && len(o.fieldSet_) > 49 && o.fieldSet_[49] {
 		return o.nodeDrainGracePeriod
 	}
 	return nil
@@ -1302,7 +1332,7 @@ func (o *Cluster) NodeDrainGracePeriod() *Value {
 //
 // Node drain grace period.
 func (o *Cluster) GetNodeDrainGracePeriod() (value *Value, ok bool) {
-	ok = o != nil && len(o.fieldSet_) > 48 && o.fieldSet_[48]
+	ok = o != nil && len(o.fieldSet_) > 49 && o.fieldSet_[49]
 	if ok {
 		value = o.nodeDrainGracePeriod
 	}
@@ -1315,7 +1345,7 @@ func (o *Cluster) GetNodeDrainGracePeriod() (value *Value, ok bool) {
 // List of node pools on this cluster.
 // NodePool is a scalable set of worker nodes attached to a hosted cluster.
 func (o *Cluster) NodePools() *NodePoolList {
-	if o != nil && len(o.fieldSet_) > 49 && o.fieldSet_[49] {
+	if o != nil && len(o.fieldSet_) > 50 && o.fieldSet_[50] {
 		return o.nodePools
 	}
 	return nil
@@ -1327,7 +1357,7 @@ func (o *Cluster) NodePools() *NodePoolList {
 // List of node pools on this cluster.
 // NodePool is a scalable set of worker nodes attached to a hosted cluster.
 func (o *Cluster) GetNodePools() (value *NodePoolList, ok bool) {
-	ok = o != nil && len(o.fieldSet_) > 49 && o.fieldSet_[49]
+	ok = o != nil && len(o.fieldSet_) > 50 && o.fieldSet_[50]
 	if ok {
 		value = o.nodePools
 	}
@@ -1339,7 +1369,7 @@ func (o *Cluster) GetNodePools() (value *NodePoolList, ok bool) {
 //
 // Information about the nodes of the cluster.
 func (o *Cluster) Nodes() *ClusterNodes {
-	if o != nil && len(o.fieldSet_) > 50 && o.fieldSet_[50] {
+	if o != nil && len(o.fieldSet_) > 51 && o.fieldSet_[51] {
 		return o.nodes
 	}
 	return nil
@@ -1350,7 +1380,7 @@ func (o *Cluster) Nodes() *ClusterNodes {
 //
 // Information about the nodes of the cluster.
 func (o *Cluster) GetNodes() (value *ClusterNodes, ok bool) {
-	ok = o != nil && len(o.fieldSet_) > 50 && o.fieldSet_[50]
+	ok = o != nil && len(o.fieldSet_) > 51 && o.fieldSet_[51]
 	if ok {
 		value = o.nodes
 	}
@@ -1367,7 +1397,7 @@ func (o *Cluster) GetNodes() (value *ClusterNodes, ok bool) {
 // When provisioning a cluster this will be ignored, as the version to
 // deploy will be determined internally.
 func (o *Cluster) OpenshiftVersion() string {
-	if o != nil && len(o.fieldSet_) > 51 && o.fieldSet_[51] {
+	if o != nil && len(o.fieldSet_) > 52 && o.fieldSet_[52] {
 		return o.openshiftVersion
 	}
 	return ""
@@ -1383,7 +1413,7 @@ func (o *Cluster) OpenshiftVersion() string {
 // When provisioning a cluster this will be ignored, as the version to
 // deploy will be determined internally.
 func (o *Cluster) GetOpenshiftVersion() (value string, ok bool) {
-	ok = o != nil && len(o.fieldSet_) > 51 && o.fieldSet_[51]
+	ok = o != nil && len(o.fieldSet_) > 52 && o.fieldSet_[52]
 	if ok {
 		value = o.openshiftVersion
 	}
@@ -1395,7 +1425,7 @@ func (o *Cluster) GetOpenshiftVersion() (value string, ok bool) {
 //
 // Link to the product type of this cluster.
 func (o *Cluster) Product() *Product {
-	if o != nil && len(o.fieldSet_) > 52 && o.fieldSet_[52] {
+	if o != nil && len(o.fieldSet_) > 53 && o.fieldSet_[53] {
 		return o.product
 	}
 	return nil
@@ -1406,7 +1436,7 @@ func (o *Cluster) Product() *Product {
 //
 // Link to the product type of this cluster.
 func (o *Cluster) GetProduct() (value *Product, ok bool) {
-	ok = o != nil && len(o.fieldSet_) > 52 && o.fieldSet_[52]
+	ok = o != nil && len(o.fieldSet_) > 53 && o.fieldSet_[53]
 	if ok {
 		value = o.product
 	}
@@ -1418,7 +1448,7 @@ func (o *Cluster) GetProduct() (value *Product, ok bool) {
 //
 // User defined properties for tagging and querying.
 func (o *Cluster) Properties() map[string]string {
-	if o != nil && len(o.fieldSet_) > 53 && o.fieldSet_[53] {
+	if o != nil && len(o.fieldSet_) > 54 && o.fieldSet_[54] {
 		return o.properties
 	}
 	return nil
@@ -1429,7 +1459,7 @@ func (o *Cluster) Properties() map[string]string {
 //
 // User defined properties for tagging and querying.
 func (o *Cluster) GetProperties() (value map[string]string, ok bool) {
-	ok = o != nil && len(o.fieldSet_) > 53 && o.fieldSet_[53]
+	ok = o != nil && len(o.fieldSet_) > 54 && o.fieldSet_[54]
 	if ok {
 		value = o.properties
 	}
@@ -1441,7 +1471,7 @@ func (o *Cluster) GetProperties() (value map[string]string, ok bool) {
 //
 // ProvisionShard contains the properties of the provision shard, including AWS and GCP related configurations
 func (o *Cluster) ProvisionShard() *ProvisionShard {
-	if o != nil && len(o.fieldSet_) > 54 && o.fieldSet_[54] {
+	if o != nil && len(o.fieldSet_) > 55 && o.fieldSet_[55] {
 		return o.provisionShard
 	}
 	return nil
@@ -1452,7 +1482,7 @@ func (o *Cluster) ProvisionShard() *ProvisionShard {
 //
 // ProvisionShard contains the properties of the provision shard, including AWS and GCP related configurations
 func (o *Cluster) GetProvisionShard() (value *ProvisionShard, ok bool) {
-	ok = o != nil && len(o.fieldSet_) > 54 && o.fieldSet_[54]
+	ok = o != nil && len(o.fieldSet_) > 55 && o.fieldSet_[55]
 	if ok {
 		value = o.provisionShard
 	}
@@ -1464,7 +1494,7 @@ func (o *Cluster) GetProvisionShard() (value *ProvisionShard, ok bool) {
 //
 // Proxy.
 func (o *Cluster) Proxy() *Proxy {
-	if o != nil && len(o.fieldSet_) > 55 && o.fieldSet_[55] {
+	if o != nil && len(o.fieldSet_) > 56 && o.fieldSet_[56] {
 		return o.proxy
 	}
 	return nil
@@ -1475,7 +1505,7 @@ func (o *Cluster) Proxy() *Proxy {
 //
 // Proxy.
 func (o *Cluster) GetProxy() (value *Proxy, ok bool) {
-	ok = o != nil && len(o.fieldSet_) > 55 && o.fieldSet_[55]
+	ok = o != nil && len(o.fieldSet_) > 56 && o.fieldSet_[56]
 	if ok {
 		value = o.proxy
 	}
@@ -1487,7 +1517,7 @@ func (o *Cluster) GetProxy() (value *Proxy, ok bool) {
 //
 // Link to the cloud provider region where the cluster is installed.
 func (o *Cluster) Region() *CloudRegion {
-	if o != nil && len(o.fieldSet_) > 56 && o.fieldSet_[56] {
+	if o != nil && len(o.fieldSet_) > 57 && o.fieldSet_[57] {
 		return o.region
 	}
 	return nil
@@ -1498,7 +1528,7 @@ func (o *Cluster) Region() *CloudRegion {
 //
 // Link to the cloud provider region where the cluster is installed.
 func (o *Cluster) GetRegion() (value *CloudRegion, ok bool) {
-	ok = o != nil && len(o.fieldSet_) > 56 && o.fieldSet_[56]
+	ok = o != nil && len(o.fieldSet_) > 57 && o.fieldSet_[57]
 	if ok {
 		value = o.region
 	}
@@ -1510,7 +1540,7 @@ func (o *Cluster) GetRegion() (value *CloudRegion, ok bool) {
 //
 // External registry configuration for the cluster
 func (o *Cluster) RegistryConfig() *ClusterRegistryConfig {
-	if o != nil && len(o.fieldSet_) > 57 && o.fieldSet_[57] {
+	if o != nil && len(o.fieldSet_) > 58 && o.fieldSet_[58] {
 		return o.registryConfig
 	}
 	return nil
@@ -1521,7 +1551,7 @@ func (o *Cluster) RegistryConfig() *ClusterRegistryConfig {
 //
 // External registry configuration for the cluster
 func (o *Cluster) GetRegistryConfig() (value *ClusterRegistryConfig, ok bool) {
-	ok = o != nil && len(o.fieldSet_) > 57 && o.fieldSet_[57]
+	ok = o != nil && len(o.fieldSet_) > 58 && o.fieldSet_[58]
 	if ok {
 		value = o.registryConfig
 	}
@@ -1533,7 +1563,7 @@ func (o *Cluster) GetRegistryConfig() (value *ClusterRegistryConfig, ok bool) {
 //
 // Overall state of the cluster.
 func (o *Cluster) State() ClusterState {
-	if o != nil && len(o.fieldSet_) > 58 && o.fieldSet_[58] {
+	if o != nil && len(o.fieldSet_) > 59 && o.fieldSet_[59] {
 		return o.state
 	}
 	return ClusterState("")
@@ -1544,7 +1574,7 @@ func (o *Cluster) State() ClusterState {
 //
 // Overall state of the cluster.
 func (o *Cluster) GetState() (value ClusterState, ok bool) {
-	ok = o != nil && len(o.fieldSet_) > 58 && o.fieldSet_[58]
+	ok = o != nil && len(o.fieldSet_) > 59 && o.fieldSet_[59]
 	if ok {
 		value = o.state
 	}
@@ -1556,7 +1586,7 @@ func (o *Cluster) GetState() (value ClusterState, ok bool) {
 //
 // Status of cluster
 func (o *Cluster) Status() *ClusterStatus {
-	if o != nil && len(o.fieldSet_) > 59 && o.fieldSet_[59] {
+	if o != nil && len(o.fieldSet_) > 60 && o.fieldSet_[60] {
 		return o.status
 	}
 	return nil
@@ -1567,7 +1597,7 @@ func (o *Cluster) Status() *ClusterStatus {
 //
 // Status of cluster
 func (o *Cluster) GetStatus() (value *ClusterStatus, ok bool) {
-	ok = o != nil && len(o.fieldSet_) > 59 && o.fieldSet_[59]
+	ok = o != nil && len(o.fieldSet_) > 60 && o.fieldSet_[60]
 	if ok {
 		value = o.status
 	}
@@ -1579,7 +1609,7 @@ func (o *Cluster) GetStatus() (value *ClusterStatus, ok bool) {
 //
 // Storage quota to be assigned to the cluster.
 func (o *Cluster) StorageQuota() *Value {
-	if o != nil && len(o.fieldSet_) > 60 && o.fieldSet_[60] {
+	if o != nil && len(o.fieldSet_) > 61 && o.fieldSet_[61] {
 		return o.storageQuota
 	}
 	return nil
@@ -1590,7 +1620,7 @@ func (o *Cluster) StorageQuota() *Value {
 //
 // Storage quota to be assigned to the cluster.
 func (o *Cluster) GetStorageQuota() (value *Value, ok bool) {
-	ok = o != nil && len(o.fieldSet_) > 60 && o.fieldSet_[60]
+	ok = o != nil && len(o.fieldSet_) > 61 && o.fieldSet_[61]
 	if ok {
 		value = o.storageQuota
 	}
@@ -1603,7 +1633,7 @@ func (o *Cluster) GetStorageQuota() (value *Value, ok bool) {
 // Link to the subscription that comes from the account management service when the cluster
 // is registered.
 func (o *Cluster) Subscription() *Subscription {
-	if o != nil && len(o.fieldSet_) > 61 && o.fieldSet_[61] {
+	if o != nil && len(o.fieldSet_) > 62 && o.fieldSet_[62] {
 		return o.subscription
 	}
 	return nil
@@ -1615,7 +1645,7 @@ func (o *Cluster) Subscription() *Subscription {
 // Link to the subscription that comes from the account management service when the cluster
 // is registered.
 func (o *Cluster) GetSubscription() (value *Subscription, ok bool) {
-	ok = o != nil && len(o.fieldSet_) > 61 && o.fieldSet_[61]
+	ok = o != nil && len(o.fieldSet_) > 62 && o.fieldSet_[62]
 	if ok {
 		value = o.subscription
 	}
@@ -1627,7 +1657,7 @@ func (o *Cluster) GetSubscription() (value *Subscription, ok bool) {
 //
 // Link to the version of _OpenShift_ that will be used to install the cluster.
 func (o *Cluster) Version() *Version {
-	if o != nil && len(o.fieldSet_) > 62 && o.fieldSet_[62] {
+	if o != nil && len(o.fieldSet_) > 63 && o.fieldSet_[63] {
 		return o.version
 	}
 	return nil
@@ -1638,7 +1668,7 @@ func (o *Cluster) Version() *Version {
 //
 // Link to the version of _OpenShift_ that will be used to install the cluster.
 func (o *Cluster) GetVersion() (value *Version, ok bool) {
-	ok = o != nil && len(o.fieldSet_) > 62 && o.fieldSet_[62]
+	ok = o != nil && len(o.fieldSet_) > 63 && o.fieldSet_[63]
 	if ok {
 		value = o.version
 	}

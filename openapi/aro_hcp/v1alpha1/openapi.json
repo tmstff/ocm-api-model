@@ -4920,6 +4920,10 @@
             "description": "Network settings of the cluster.",
             "$ref": "#/components/schemas/Network"
           },
+          "node_ssh_public_key": {
+            "description": "The SSH public key used for secure access to cluster nodes. When set, this key\nis distributed to all nodes, enabling SSH access for debugging\nand maintenance purposes.\nThis is currently only supported for ARO HCP",
+            "type": "string"
+          },
           "node_drain_grace_period": {
             "description": "Node drain grace period.",
             "$ref": "#/components/schemas/Value"
